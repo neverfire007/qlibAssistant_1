@@ -7,6 +7,9 @@ concurrency:
   group: train-model
   cancel-in-progress: false
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true" # 提前锁定 Node 24 环境，避免 2026 年失效
+  
 on:
   # 定时触发（避开整点，GitHub 整点负载高易导致任务被丢弃）
   schedule:
